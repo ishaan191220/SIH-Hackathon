@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>REGISTER</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+    
+    <script src="js/bundle.js"></script>
+    
+    <!-- Style CSS-->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/grid.css" rel="stylesheet">
+
+     <link href="css/register.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+    .panel-heading{
+        margin-bottom: 20px;
+    }
+    .navbar{
+        margin-bottom: 70px;
+    }
+    </style>
+
+</head>
+<body>
+
+<div class="login">
+             <div class="row1">
+                 <div class="patient user col span-1-of-2 box">
+                       <ion-icon name="people"></ion-icon>
+                     <br>
+                 <button class="btn" onclick="showPatient()"> <b>REGISTER AS PATIENT</b>
+                     </button>
+                 </div>
+                 <div class="doctor user col span-1-of-2 box">
+                     <ion-icon class="icon-doc" name="medkit" icon-2x ></ion-icon>
+                     <br>
+                 <button class="btn" onclick="showDoctor()"> <b>REGISTER AS DOCTOR</b>
+                     </button>
+                 </div>
+                </div>
+            </div>
+    
+   <div class="container" id="patient">
+            <div class="panel panel-default">
+               
+                        
+              
+                <div class="panel-body">
+                     <h3 class="text-center">Please enter your details to register.</h3>
+                    <div class="row">
+                        <div class="alert alert-warning col-sm-8 col-sm-offset-2" style="display: none;">
+                            <strong>Warning!</strong> Invalid public key. Please enter a valid public key to register.
+                        </div>
+                                    
+                        <div class="alert alert-info col-sm-8 col-sm-offset-2" style="display: none;">
+                            <strong>Info!</strong> User already registered. Please check your details.
+                        </div>
+                    </div>
+                    
+                    <form name="registerForm" class="form-horizontal" action="./doctor.html">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="name">Name:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="name" placeholder="Enter name" name = "Name" required autofocus>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="age">Age:</label>
+                            <div class="col-sm-8">
+                                <input type="age" class="form-control" id="age" placeholder="Enter age" name = "Age" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="name">Gender:</label>
+                            <div class="col-sm-8">
+                                <!--<input type="text" class="form-control" id="name" placeholder="Enter name" name = "Name" required autofocus>-->
+                                <input type="radio" id="male" name="male" value="Male" checked="checked">
+  <label for="male">Male</label><br>
+  <input type="radio" id="female" name="female" value="Female">
+  <label for="female">Female</label><br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="name">Blood Group:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="BloodGroup" placeholder="Enter blood group" name = "BloodGroup" required autofocus>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="name">City:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="city" placeholder="Enter city" name = "city" required autofocus>
+                            </div>
+                        </div>
+                        
+                        <!--<div class="form-group"> 
+                            <label for="designation" class="control-label col-sm-2">Registering as</label>
+                            <div class="col-sm-8">
+                                <select class="form-control" id="designation" required>
+                                    <option selected disabled>-- Please Select --</option>
+                                    <option value="0">Patient</option>
+                                    <option value="1">Doctor</option>
+                                </select>
+                            </div>
+                        </div>-->
+
+                    </form>
+                   <div class="submit-text">
+                        <button class="btn btn-primary btn-lg" onclick="addAgent()">Register</button>
+                    </div>
+                </div>
+            </div>
+            
+            <hr>
+                
+        </div>
+    
+    
+    <div class="container" id="doctor">
+            <div class="panel panel-default">
+               
+                <div class="panel-body">
+                    
+                        <h3 class="text-center">Please enter your details to register.</h3>
+             
+                    <div class="row">
+                        <div class="alert alert-warning col-sm-8 col-sm-offset-2" style="display: none;">
+                            <strong>Warning!</strong> Invalid public key. Please enter a valid public key to register.
+                        </div>
+                                    
+                        <div class="alert alert-info col-sm-8 col-sm-offset-2" style="display: none;">
+                            <strong>Info!</strong> User already registered. Please check your details.
+                        </div>
+                    </div>
+                    
+                    <form name="registerForm" class="form-horizontal" action="./doctor.html">
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="name">Name:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="name" placeholder="Enter name" name = "Name" required autofocus>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="age">Age:</label>
+                            <div class="col-sm-8">
+                                <input type="age" class="form-control" id="age" placeholder="Enter age" name = "Age" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="name">Gender:</label>
+                            <div class="col-sm-8">
+                                <!--<input type="text" class="form-control" id="name" placeholder="Enter name" name = "Name" required autofocus>-->
+                                <input type="radio" id="male" name="male" value="Male" checked="checked">
+  <label for="male">Male</label><br>
+  <input type="radio" id="female" name="female" value="Female">
+  <label for="female">Female</label><br>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="degree">Degree:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="degree" placeholder="Enter degree" name = "Degree" required autofocus>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="name">Registration Number:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="registrationNumber" placeholder="Enter registration number" name = "RegistrationNumber" required autofocus>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="name">Username:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="username" placeholder="Enter username" name = "Username" required autofocus>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-2" for="name">Password:</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="password" placeholder="Enter password" name = "Password" required autofocus>
+                            </div>
+                        </div>
+                        <!--<div class="form-group"> 
+                            <label for="designation" class="control-label col-sm-2">Registering as</label>
+                            <div class="col-sm-8">
+                                <select class="form-control" id="designation" required>
+                                    <option selected disabled>-- Please Select --</option>
+                                    <option value="0">Patient</option>
+                                    <option value="1">Doctor</option>
+                                </select>
+                            </div>
+                        </div>-->
+
+                    </form>
+                    <div class="submit-text">
+                        <button class="btn btn-primary btn-lg" onclick="addAgent()">Register</button>
+                    </div>
+                </div>
+            </div>
+            
+            <hr>
+                
+        </div>
+ <script src="js/register.js"></script>   
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
+
+<script type = "text/javascript"> 
+function showPatient() {
+    document.getElementById('patient').style.display = "block";
+     document.getElementById('doctor').style.display = "none";
+}
+function showDoctor() {
+    document.getElementById('patient').style.display = "none";
+     document.getElementById('doctor').style.display = "block";
+}
+</script>
